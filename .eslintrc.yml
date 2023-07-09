@@ -8,6 +8,13 @@ parserOptions:
 rules:
   max-len:
     - error
-    - code: 100
+    - code: 300
   require-jsdoc:
     - off
+  linebreak-style: 0
+  semi: 0
+  space-before-function-paren: 0
+  max-lines-per-function: 0
+  indent: off
+  padded-blocks: off
+  comma-dangle: off
