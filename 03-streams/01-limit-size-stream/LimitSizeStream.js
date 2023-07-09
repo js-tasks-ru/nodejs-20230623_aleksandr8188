@@ -16,7 +16,7 @@ class LimitSizeStream extends stream.Transform {
 
     this.limitLeft -= Buffer.byteLength(chunk, this.encoding);
 
-    return callback(null, chunk);
+    callback(null, chunk);
   }
 }
 
