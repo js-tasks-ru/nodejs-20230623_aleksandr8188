@@ -10,11 +10,11 @@ class LimitSizeStream extends stream.Transform {
   }
 
   _transform(chunk, encoding, callback) {
-    if (chunk.toString(this.encoding).length > this.limitLeft) {
+    if (Buffer.byteLength(chunk, this.encoding) > this.limitLeft) {
       return callback(new LimitExceededError());
     }
 
-    this.limitLeft -= chunk.toString().length;
+    this.limitLeft -= Buffer.byteLength(chunk, this.encoding);
 
     return callback(null, chunk);
   }
